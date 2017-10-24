@@ -20,6 +20,8 @@
         {
             console.log( "TaskInput.render() being invoked" );
 
+            const NewTaskButton:any  = tl.Styles.getNewTaskButton();
+
             return <form onSubmit={ ( event:React.FormEvent<any> ) => { this.onFormSubmit( event ); } }>
 
                 { /* new task input */ }
@@ -35,11 +37,9 @@
                 <br />
 
                 { /* new task button */ }
-                <input
-                    id="submitButton"
+                <NewTaskButton
                     type="submit"
                     value="Create Task"
-                    className="button"
                 />
 
             </form>;

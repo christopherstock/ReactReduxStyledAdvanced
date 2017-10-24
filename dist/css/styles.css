@@ -26,13 +26,6 @@
         text-align:         center;
     }
 
-    input#submitButton,
-    button#submitButton
-    {
-        height:             40px;
-        margin-top:         15px;
-    }
-
     @keyframes fadeIn { from { opacity: 0.0; } to { opacity: 1.0; } }
 
     ul#taskList

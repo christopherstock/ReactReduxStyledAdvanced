@@ -38,4 +38,24 @@
                 color:     #3d3d3d;
             `;
         }
+
+        /*******************************************************************************************************************
+        *   Styles the application title.
+        *
+        *   @return The styling for the app title.
+        *******************************************************************************************************************/
+        public static getNewTaskButton()
+        {
+            return styled.input`
+                background:         #8c8c8c;
+                color:              #ffffff;
+                padding:            0 10px 0 10px;
+                height:             40px;
+                margin-top:         15px;
+                
+                &:hover {
+                    background:     #a8a8a8;
+                }
+            `;
+        }
     }
