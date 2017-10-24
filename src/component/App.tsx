@@ -8,7 +8,7 @@
     *   This is an example for a stateful component.
     *
     *   TODO Solve styled components.
-    *   TODO Remove packaqges '@types/typescript' and '@types/redux' from package.json?
+    *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *
     *   @author  Christopher Stock
     *   @version 1.0
@@ -38,6 +38,12 @@
                 background: papayawhip;
             `;
 
+
+            class YourProps
+            {
+                primary :boolean;
+            }
+
             const Button = styled.button`
                 border-radius: 3px;
                 padding: 0.25em 1em;
@@ -46,11 +52,11 @@
                 color: palevioletred;
                 border: 2px solid palevioletred;
                 
-                ${props => props.primary && css`
+                ${ ( props: YourProps ) => props.primary && css`
                     background: palevioletred;
                     color: white;
                 `}
-                `;
+            `;
 
 
 
@@ -81,8 +87,8 @@
                     </Title>
                 </Wrapper>
 
-                <Button>Button via SC</Button>
-                <Button primary>Primary Button</Button>
+                <Button primary={ false }>Button via SC</Button>
+                <Button primary={ true  }>Primary Button</Button>
 
             </div>;
         }
