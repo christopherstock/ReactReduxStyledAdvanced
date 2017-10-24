@@ -20,21 +20,6 @@
 
     @keyframes fadeIn { from { opacity: 0.0; } to { opacity: 1.0; } }
 
-    ul#taskList
-    {
-        list-style-type:    none;
-    }
-
-    .input
-    {
-        background:         #e2e2e2;
-    }
-
-    .input:focus
-    {
-        background:         #cacaca;
-    }
-
     .input.error,
     .input.error:focus
     {

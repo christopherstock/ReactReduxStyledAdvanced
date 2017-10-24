@@ -52,8 +52,9 @@
                 padding:            0 10px 0 10px;
                 height:             40px;
                 margin-top:         15px;
-                
-                &:hover {
+
+                &:hover
+                {
                     background:     #a8a8a8;
                 }
             `;
@@ -72,14 +73,23 @@
                 margin-top: 15px;
                 text-align: center;
                 background: #e2e2e2;                
-                
-                &:hover {
-                
-                }
-                
-                &:focus {
+
+                &:focus
+                {
                     background: #cacaca;
                 }
+            `;
+        }
+
+        /*******************************************************************************************************************
+        *   Styles the task list.
+        *
+        *   @return The styling for the task list.
+        *******************************************************************************************************************/
+        public static getTaskList()
+        {
+            return styled.ul`
+                list-style-type: none;
             `;
         }
 
@@ -110,16 +120,15 @@
                 background:     #8c8c8c;
                 color:          #ffffff;
                 padding:        0 10px 0 10px;
-
                 float:          right;
                 line-height:    30px;
                 margin:         5px;
-        
+
                 &:hover
                 {
                     background: #a8a8a8;
                 }
-        
+
                 &:disabled
                 {
                     background: #c5c5c5;

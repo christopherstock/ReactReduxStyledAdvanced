@@ -11,7 +11,9 @@
     *******************************************************************************************************************/
     export class TaskListUnconnected extends React.Component<tl.TaskListProps, null>
     {
-        private TaskListItem:any  = null;
+        private TaskList:any        = null;
+
+        private TaskListItem:any    = null;
 
         private TaskItemButton:any  = null;
 
@@ -24,6 +26,7 @@
         {
             super( props );
 
+            this.TaskList       = tl.Styles.getTaskList();
             this.TaskListItem   = tl.Styles.getTaskListItem();
             this.TaskItemButton = tl.Styles.getTaskItemButton();
         }
@@ -40,11 +43,11 @@
             // animate main container height later
             document.getElementById( "mainContainer" ).style.height = ( 150 + ( this.props.taskList.length * 55 ) ) + "px";
 
-            return <ul id="taskList">
+            return <this.TaskList>
 
                 { this.createItems() }
 
-            </ul>;
+            </this.TaskList>;
         }
 
         /***************************************************************************************************************
