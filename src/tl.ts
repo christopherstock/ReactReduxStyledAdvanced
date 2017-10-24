@@ -11,3 +11,5 @@
     export * from './redux/Connector';
     export * from './redux/Reducer';
     export * from './redux/State';
+
+    export * from './style/Styles';

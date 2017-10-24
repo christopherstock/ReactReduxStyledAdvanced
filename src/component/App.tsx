@@ -1,7 +1,6 @@
 
     import * as React      from 'react';
     import * as tl         from '../tl';
-    import styled, { css } from 'styled-components';
 
     /*******************************************************************************************************************
     *   The entire application component.
@@ -22,73 +21,24 @@
         ***************************************************************************************************************/
         public render() : JSX.Element
         {
-
-
-
-            // Create a Title component that'll render an <h1> tag with some styles
-            const Title = styled.h1`
-                font-size: 1.5em;
-                text-align: center;
-                color: palevioletred;
-            `;
-
-            // Create a Wrapper component that'll render a <section> tag with some styles
-            const Wrapper = styled.section`
-                padding: 4em;
-                background: papayawhip;
-            `;
-
-
-            class YourProps
-            {
-                primary :boolean;
-            }
-
-            const Button = styled.button`
-                border-radius: 3px;
-                padding: 0.25em 1em;
-                margin: 0 1em;
-                background: transparent;
-                color: palevioletred;
-                border: 2px solid palevioletred;
-                
-                ${ ( props: YourProps ) => props.primary && css`
-                    background: palevioletred;
-                    color: white;
-                `}
-            `;
-
-
-
-
             console.log( "App.render() being invoked" );
 
+            // TODO outsource -- will change if theme changes!
             // this method is only being passed once in the applications lifecycle!
+            const AppTitle:any  = tl.Styles.getAppTitle();
             const TaskInput:any = tl.Connector.connectTaskInput();
             const TaskList:any  = tl.Connector.connectTaskList();
 
             return <div>
 
                 { /* title */ }
-                <h1 id="appTitle">{ this.props.title }</h1>
+                <AppTitle>{ this.props.title }</AppTitle>
 
                 { /* task input form */ }
                 <TaskInput />
 
                 { /* task list */ }
                 <TaskList />
-
-
-
-                { /* styled component example */ }
-                <Wrapper>
-                    <Title>
-                        Hello World, this is my first styled component!
-                    </Title>
-                </Wrapper>
-
-                <Button primary={ false }>Button via SC</Button>
-                <Button primary={ true  }>Primary Button</Button>
 
             </div>;
         }
