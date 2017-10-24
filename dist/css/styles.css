@@ -18,16 +18,6 @@
         outline:            none;
     }
 
-    div#mainContainer
-    {
-        background:         #ffffff;
-        text-align:         center;
-        margin:             0 auto 0 auto;
-        padding:            15px;
-        width:              640px;
-        height:             auto;
-    }
-
     input#newTask
     {
         width:              400px;

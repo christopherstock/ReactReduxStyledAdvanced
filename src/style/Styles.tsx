@@ -10,7 +10,26 @@
     export class Styles
     {
         /*******************************************************************************************************************
+        *   Styles the application component.
+        *
+        *   @return The styling for the app title.
+        *******************************************************************************************************************/
+        public static getAppPanel()
+        {
+            return styled.div`
+                background: #ffffff;
+                text-align: center;
+                margin:     0 auto 0 auto;
+                padding:    15px;
+                width:      640px;
+                height:     auto;                
+            `;
+        }
+
+        /*******************************************************************************************************************
         *   Styles the application title.
+        *
+        *   @return The styling for the app title.
         *******************************************************************************************************************/
         public static getAppTitle()
         {

@@ -6,7 +6,9 @@
     *   The entire application component.
     *   This is an example for a stateful component.
     *
+    *   TODO Add TypeScript typings to Styles.
     *   TODO Solve styled components.
+    *   TODO Remove div#mainContainer ?
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *
     *   @author  Christopher Stock
@@ -25,11 +27,12 @@
 
             // TODO outsource -- will change if theme changes!
             // this method is only being passed once in the applications lifecycle!
+            const AppPanel:any  = tl.Styles.getAppPanel();
             const AppTitle:any  = tl.Styles.getAppTitle();
             const TaskInput:any = tl.Connector.connectTaskInput();
             const TaskList:any  = tl.Connector.connectTaskList();
 
-            return <div>
+            return <AppPanel>
 
                 { /* title */ }
                 <AppTitle>{ this.props.title }</AppTitle>
@@ -40,6 +43,6 @@
                 { /* task list */ }
                 <TaskList />
 
-            </div>;
+            </AppPanel>;
         }
     }
