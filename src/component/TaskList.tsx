@@ -12,6 +12,16 @@
     export class TaskListUnconnected extends React.Component<tl.TaskListProps, null>
     {
         /***************************************************************************************************************
+        *   Creates a new instance of this component.
+        *
+        *   @param props The properties being passed as tag attributes.
+        ***************************************************************************************************************/
+        public constructor( props:tl.TaskListProps )
+        {
+            super( props );
+        }
+
+        /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
         *   @return JSX.Element The rendered JSX.

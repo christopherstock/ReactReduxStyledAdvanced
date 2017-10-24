@@ -58,4 +58,28 @@
                 }
             `;
         }
+
+        /*******************************************************************************************************************
+        *   Styles the application title.
+        *
+        *   @return The styling for the app title.
+        *******************************************************************************************************************/
+        public static getNewTaskInput()
+        {
+            return styled.input`
+                width:      400px;
+                height:     40px;
+                margin-top: 15px;
+                text-align: center;
+                background: #e2e2e2;                
+                
+                &:hover {
+                
+                }
+                
+                &:focus {
+                    background: #cacaca;
+                }
+            `;
+        }
     }

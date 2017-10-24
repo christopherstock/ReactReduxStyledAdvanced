@@ -16,6 +16,23 @@
     *******************************************************************************************************************/
     export class App extends React.Component<tl.AppProps, null>
     {
+        private AppPanel:any  = null;
+
+        private AppTitle:any = null;
+
+        /***************************************************************************************************************
+        *   Creates a new instance of this component.
+        *
+        *   @param props The properties being passed as tag attributes.
+        ***************************************************************************************************************/
+        public constructor( props:tl.AppProps )
+        {
+            super( props );
+
+            this.AppPanel = tl.Styles.getAppPanel();
+            this.AppTitle = tl.Styles.getAppTitle();
+        }
+
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
@@ -27,15 +44,13 @@
 
             // TODO outsource -- will change if theme changes!
             // this method is only being passed once in the applications lifecycle!
-            const AppPanel:any  = tl.Styles.getAppPanel();
-            const AppTitle:any  = tl.Styles.getAppTitle();
             const TaskInput:any = tl.Connector.connectTaskInput();
             const TaskList:any  = tl.Connector.connectTaskList();
 
-            return <AppPanel>
+            return <this.AppPanel>
 
                 { /* title */ }
-                <AppTitle>{ this.props.title }</AppTitle>
+                <this.AppTitle>{ this.props.title }</this.AppTitle>
 
                 { /* task input form */ }
                 <TaskInput />
@@ -43,6 +58,6 @@
                 { /* task list */ }
                 <TaskList />
 
-            </AppPanel>;
+            </this.AppPanel>;
         }
     }
