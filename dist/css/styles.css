@@ -25,13 +25,6 @@
         list-style-type:    none;
     }
 
-    ul#taskList button
-    {
-        float:              right;
-        line-height:        30px;
-        margin:             5px;
-    }
-
     .input
     {
         background:         #e2e2e2;
@@ -46,21 +39,4 @@
     .input.error:focus
     {
         background:         #ff7086;
-    }
-
-    .button
-    {
-        background:         #8c8c8c;
-        color:              #ffffff;
-        padding:            0 10px 0 10px;
-    }
-
-    .button:hover
-    {
-        background:         #a8a8a8;
-    }
-
-    .button:disabled
-    {
-        background:         #c5c5c5;
     }

@@ -13,6 +13,8 @@
     {
         private TaskListItem:any  = null;
 
+        private TaskItemButton:any  = null;
+
         /***************************************************************************************************************
         *   Creates a new instance of this component.
         *
@@ -22,7 +24,8 @@
         {
             super( props );
 
-            this.TaskListItem = tl.Styles.getTaskListItem();
+            this.TaskListItem   = tl.Styles.getTaskListItem();
+            this.TaskItemButton = tl.Styles.getTaskItemButton();
         }
 
         /***************************************************************************************************************
@@ -63,30 +66,27 @@
                         { this.props.taskList[ index ] }
 
                         { /* Button 'Delete' */ }
-                        <button
+                        <this.TaskItemButton
                             onClick={ () => { this.props.onTaskDelete( index ); } }
-                            className="button"
                         >
                             &#10006;
-                        </button>
+                        </this.TaskItemButton>
 
                         { /* Button 'Move Down' */ }
-                        <button
+                        <this.TaskItemButton
                             onClick={ () => { this.props.onTaskMoveDown( index ); } }
                             disabled={ index === this.props.taskList.length - 1 }
-                            className="button"
                         >
                             &#9660;
-                        </button>
+                        </this.TaskItemButton>
 
                         { /* Button 'Move Up' */ }
-                        <button
+                        <this.TaskItemButton
                             onClick={ () => { this.props.onTaskMoveUp( index ); } }
                             disabled={ index === 0 }
-                            className="button"
                         >
                             &#9650;
-                        </button>
+                        </this.TaskItemButton>
 
                     </this.TaskListItem>
                 );

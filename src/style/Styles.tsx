@@ -99,5 +99,31 @@
             `;
         }
 
+        /*******************************************************************************************************************
+        *   Styles one button of one task list item.
+        *
+        *   @return The styling for the app title.
+        *******************************************************************************************************************/
+        public static getTaskItemButton()
+        {
+            return styled.button`
+                background:     #8c8c8c;
+                color:          #ffffff;
+                padding:        0 10px 0 10px;
 
+                float:          right;
+                line-height:    30px;
+                margin:         5px;
+        
+                &:hover
+                {
+                    background: #a8a8a8;
+                }
+        
+                &:disabled
+                {
+                    background: #c5c5c5;
+                }
+            `;
+        }
     }
