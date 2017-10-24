@@ -7,8 +7,11 @@
     *   This is an example for a stateful component.
     *
     *   TODO Add TypeScript typings to Styles.
+    *   TODO Move all styled instances to class Styles.
     *   TODO Solve styled components.
     *   TODO Remove div#mainContainer ?
+    *   TODO Add theme switcher.
+    *   TODO Solve all basic and advanced technics of Styled components.
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *
     *   @author  Christopher Stock

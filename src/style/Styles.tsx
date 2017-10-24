@@ -82,4 +82,22 @@
                 }
             `;
         }
+
+        /*******************************************************************************************************************
+        *   Styles one task list item.
+        *
+        *   @return The styling for the app title.
+        *******************************************************************************************************************/
+        public static getTaskListItem()
+        {
+            return styled.li`
+                background:  #a5e2bf;
+                animation:   fadeIn 1.0s ease-in;
+                height:      40px;
+                line-height: 40px;
+                margin-top:  15px;
+            `;
+        }
+
+
     }

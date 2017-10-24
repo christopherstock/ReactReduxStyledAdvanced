@@ -11,6 +11,8 @@
     *******************************************************************************************************************/
     export class TaskListUnconnected extends React.Component<tl.TaskListProps, null>
     {
+        private TaskListItem:any  = null;
+
         /***************************************************************************************************************
         *   Creates a new instance of this component.
         *
@@ -19,6 +21,8 @@
         public constructor( props:tl.TaskListProps )
         {
             super( props );
+
+            this.TaskListItem = tl.Styles.getTaskListItem();
         }
 
         /***************************************************************************************************************
@@ -53,7 +57,7 @@
             for ( let index = 0; index < this.props.taskList.length; ++index )
             {
                 items.push(
-                    <li key={ index }>
+                    <this.TaskListItem key={ index }>
 
                         { /* The item description */ }
                         { this.props.taskList[ index ] }
@@ -84,7 +88,7 @@
                             &#9650;
                         </button>
 
-                    </li>
+                    </this.TaskListItem>
                 );
             }
 
