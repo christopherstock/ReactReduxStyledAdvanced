@@ -20,10 +20,13 @@
         // create redux store
         let store:ReactRedux.Store<any> = Redux.createStore( tl.Reducer.taskListReducer );
 
-        // dispatch default items
+        // dispatch default task items
         store.dispatch( tl.ActionCreator.createTaskAction( "Müll rausbringen" ) );
         store.dispatch( tl.ActionCreator.createTaskAction( "Abwaschen"        ) );
         store.dispatch( tl.ActionCreator.createTaskAction( "Wäsche waschen"   ) );
+
+        // init styled components
+        tl.Styles.init();
 
         // render the App component into the main container
         ReactDOM.render(

@@ -11,23 +11,6 @@
     *******************************************************************************************************************/
     export class TaskInputUnconnected extends React.Component<tl.TaskInputProps, null>
     {
-        private NewTaskInput:any  = null;
-
-        private NewTaskButton:any = null;
-
-        /***************************************************************************************************************
-        *   Creates a new instance of this component.
-        *
-        *   @param props The properties being passed as tag attributes.
-        ***************************************************************************************************************/
-        public constructor( props:tl.TaskInputProps )
-        {
-            super( props );
-
-            this.NewTaskInput  = tl.Styles.getNewTaskInput();
-            this.NewTaskButton = tl.Styles.getNewTaskButton();
-        }
-
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
@@ -40,7 +23,7 @@
             return <form onSubmit={ ( event:React.FormEvent<any> ) => { this.onFormSubmit( event ); } }>
 
                 { /* new task input */ }
-                <this.NewTaskInput
+                <tl.Styles.NewTaskInput
                     type="text"
                     maxLength={ 50 }
                     className={ this.props.inputError ? "input error" : "input" }
@@ -51,7 +34,7 @@
                 <br />
 
                 { /* new task button */ }
-                <this.NewTaskButton
+                <tl.Styles.NewTaskButton
                     type="submit"
                     value="Create Task"
                 />

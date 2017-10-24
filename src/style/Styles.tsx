@@ -9,12 +9,38 @@
     *******************************************************************************************************************/
     export class Styles
     {
+        public      static  AppPanel                :any                = null;
+        public      static  AppTitle                :any                = null;
+        public      static  NewTaskInput            :any                = null;
+        public      static  NewTaskButton           :any                = null;
+        public      static  TaskList                :any                = null;
+        public      static  TaskListItem            :any                = null;
+        public      static  TaskItemButton          :any                = null;
+
         /*******************************************************************************************************************
         *   Styles the application component.
         *
         *   @return The styling for the app title.
         *******************************************************************************************************************/
-        public static getAppPanel()
+        public static init()
+        {
+            this.AppPanel       = Styles.getAppPanel();
+            this.AppTitle       = Styles.getAppTitle();
+
+            this.NewTaskInput   = Styles.getNewTaskInput();
+            this.NewTaskButton  = Styles.getNewTaskButton();
+
+            this.TaskList       = Styles.getTaskList();
+            this.TaskListItem   = Styles.getTaskListItem();
+            this.TaskItemButton = Styles.getTaskItemButton();
+        }
+
+        /*******************************************************************************************************************
+        *   Styles the application component.
+        *
+        *   @return The styling for the app title.
+        *******************************************************************************************************************/
+        private static getAppPanel()
         {
             return styled.div`
                 background: #ffffff;
@@ -31,7 +57,7 @@
         *
         *   @return The styling for the app title.
         *******************************************************************************************************************/
-        public static getAppTitle()
+        private static getAppTitle()
         {
             return styled.h1`
                 font-size: 35px;
@@ -44,7 +70,7 @@
         *
         *   @return The styling for the app title.
         *******************************************************************************************************************/
-        public static getNewTaskButton()
+        private static getNewTaskButton()
         {
             return styled.input`
                 background:         #8c8c8c;
@@ -65,7 +91,7 @@
         *
         *   @return The styling for the app title.
         *******************************************************************************************************************/
-        public static getNewTaskInput()
+        private static getNewTaskInput()
         {
             return styled.input`
                 width:      400px;
@@ -86,7 +112,7 @@
         *
         *   @return The styling for the task list.
         *******************************************************************************************************************/
-        public static getTaskList()
+        private static getTaskList()
         {
             return styled.ul`
                 list-style-type: none;
@@ -98,7 +124,7 @@
         *
         *   @return The styling for the app title.
         *******************************************************************************************************************/
-        public static getTaskListItem()
+        private static getTaskListItem()
         {
             return styled.li`
                 background:  #a5e2bf;
@@ -114,7 +140,7 @@
         *
         *   @return The styling for the app title.
         *******************************************************************************************************************/
-        public static getTaskItemButton()
+        private static getTaskItemButton()
         {
             return styled.button`
                 background:     #8c8c8c;
