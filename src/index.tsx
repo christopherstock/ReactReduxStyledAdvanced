@@ -29,6 +29,11 @@
         tl.Styles.init();
 
         // render the App component into the main container
+
+        let mainContainer:HTMLDivElement = document.createElement('div');
+        mainContainer.id = "mainContainer";
+        document.body.appendChild(mainContainer);
+
         ReactDOM.render(
 
             <ReactRedux.Provider store={ store }>
@@ -38,7 +43,7 @@
                 />
 
             </ReactRedux.Provider>,
-            document.getElementById('mainContainer')
+            mainContainer
         );
     };
 

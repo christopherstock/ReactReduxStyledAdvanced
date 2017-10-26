@@ -15,7 +15,7 @@
 
         public      static              BasicButton             :any                = null;
 
-        public      static              AnimationFadeIn         :any                = null;
+        public      static              AnimationFadeIn         :string             = null;
 
         public      static              AppPanel                :any                = null;
         public      static              AppTitle                :any                = null;
@@ -78,7 +78,7 @@
         *
         *   @return The styling for a basic button.
         ***************************************************************************************************************/
-        private static createBasicButton() : React.DetailedHTMLProps<any, any>
+        private static createBasicButton() : any
         {
             return styled.input`
                 background: #8c8c8c;
@@ -103,7 +103,7 @@
         *
         *   @return The 'fade in' animation.
         ***************************************************************************************************************/
-        private static createAnimationFadeIn() : string
+        private static createAnimationFadeIn() : any
         {
             return keyframes`
                 from 
@@ -123,7 +123,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createAppPanel() : React.DetailedHTMLProps<any, any>
+        private static createAppPanel() : any
         {
             return styled.div`
                 background: #ffffff;
@@ -140,7 +140,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createAppTitle() : React.DetailedHTMLProps<any, any>
+        private static createAppTitle() : any
         {
             return styled.h1`
                 font-size: 35px;
@@ -153,7 +153,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createNewTaskButton() : React.DetailedHTMLProps<any, any>
+        private static createNewTaskButton() : any
         {
             return Styles.BasicButton.extend`
                 height:     40px;
@@ -166,7 +166,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createNewTaskInput() : React.DetailedHTMLProps<any, any>
+        private static createNewTaskInput() : any
         {
             return styled.input`
                 width:      400px;
@@ -188,7 +188,7 @@
         *
         *   @return The styling for the task list.
         ***************************************************************************************************************/
-        private static createTaskList() : React.DetailedHTMLProps<any, any>
+        private static createTaskList() : any
         {
             return styled.ul`
                 list-style-type: none;
@@ -200,7 +200,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createTaskListItem() : React.DetailedHTMLProps<any, any>
+        private static createTaskListItem() : any
         {
             return styled.li`
                 background:  #a5e2bf;
@@ -216,7 +216,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createTaskItemButton() : React.DetailedHTMLProps<any, any>
+        private static createTaskItemButton() : any
         {
             return Styles.BasicButton.extend`
                 float:          right;
