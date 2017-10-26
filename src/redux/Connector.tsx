@@ -1,6 +1,5 @@
 
     import * as React      from 'react';
-    import * as Redux      from 'redux';
     import * as ReactRedux from 'react-redux';
     import * as tl         from '../tl';
 
@@ -26,14 +25,12 @@
                 }
             };
 
-            const mapDispatchToProps:any = ( dispatch:Redux.Dispatch<Redux.Action> ) : any => {
-                return {
-                    onTaskCreate:      ( text:string ) => dispatch( tl.ActionCreator.createTaskAction(      text ) ),
-                    onSetInputField:   ( text:string ) => dispatch( tl.ActionCreator.setInputFieldAction(   text ) ),
-                    onClearInputField: ()              => dispatch( tl.ActionCreator.clearInputFieldAction()       ),
-                    onSetInputError:   ()              => dispatch( tl.ActionCreator.setInputErrorAction()         ),
-                    onClearInputError: ()              => dispatch( tl.ActionCreator.clearInputErrorAction()       ),
-                }
+            const mapDispatchToProps:any = {
+                onTaskCreate:      tl.ActionCreator.createTaskAction,
+                onSetInputField:   tl.ActionCreator.setInputFieldAction,
+                onClearInputField: tl.ActionCreator.clearInputFieldAction,
+                onSetInputError:   tl.ActionCreator.setInputErrorAction,
+                onClearInputError: tl.ActionCreator.clearInputErrorAction,
             };
 
             return ReactRedux.connect(
@@ -55,12 +52,10 @@
                 }
             };
 
-            const mapDispatchToProps:any = ( dispatch:Redux.Dispatch<Redux.Action> ) : any => {
-                return {
-                    onTaskDelete:   ( index:number ) => dispatch( tl.ActionCreator.deleteTaskAction(   index ) ),
-                    onTaskMoveUp:   ( index:number ) => dispatch( tl.ActionCreator.moveTaskUpAction(   index ) ),
-                    onTaskMoveDown: ( index:number ) => dispatch( tl.ActionCreator.moveTaskDownAction( index ) ),
-                }
+            const mapDispatchToProps:any = {
+                onTaskDelete:   tl.ActionCreator.deleteTaskAction,
+                onTaskMoveUp:   tl.ActionCreator.moveTaskUpAction,
+                onTaskMoveDown: tl.ActionCreator.moveTaskDownAction,
             };
 
             return ReactRedux.connect(

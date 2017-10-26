@@ -18,7 +18,7 @@
         document.title = APPLICATION_TITLE;
 
         // create redux store
-        let store:ReactRedux.Store<any> = Redux.createStore( tl.Reducer.taskListReducer );
+        let store:ReactRedux.Store<tl.State> = Redux.createStore( tl.Reducer.taskListReducer );
 
         // dispatch default task items
         store.dispatch( tl.ActionCreator.createTaskAction( "Müll rausbringen" ) );
