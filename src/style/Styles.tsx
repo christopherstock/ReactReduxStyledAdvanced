@@ -1,7 +1,7 @@
 
-    import *                   as tl    from '../tl';
-    import styled, {keyframes}          from 'styled-components';
-    import *                   as React from 'react';
+    import * as tl from '../tl';
+    import * as React from 'react';
+    import styled, {keyframes, injectGlobal } from 'styled-components';
 
     /*******************************************************************************************************************
     *   Defines all stylings for all styled components.
@@ -32,6 +32,8 @@
         ***************************************************************************************************************/
         public static init()
         {
+            this.setGlobalStyle();
+
             this.BasicButton     = Styles.createBasicButton();
 
             this.AnimationFadeIn = Styles.createAnimationFadeIn();
@@ -46,6 +48,32 @@
         }
 
         /***************************************************************************************************************
+        *   Sets global css attributes.
+        ***************************************************************************************************************/
+        private static setGlobalStyle() : void
+        {
+            injectGlobal`
+                body
+                {
+                    background: #c0c0c0;
+                    color:      #3d3d3d;
+                    margin:     50px;
+                }
+                
+                *
+                {
+                    font-family:   sans-serif;
+                    font-size:     15px;
+                    margin:        0;
+                    padding:       0;
+                    border:        0;
+                    border-radius: 5px;
+                    outline:       none;
+                }                
+            `;
+        }
+
+        /***************************************************************************************************************
         *   Styles basic buttons.
         *
         *   @return The styling for a basic button.
@@ -56,6 +84,7 @@
                 background: #8c8c8c;
                 color:      #ffffff;
                 padding:    0 10px 0 10px;
+                transition: all 0.3s ease-in;
 
                 &:hover
                 {
@@ -127,8 +156,8 @@
         private static createNewTaskButton() : React.DetailedHTMLProps<any, any>
         {
             return Styles.BasicButton.extend`
-                height:             40px;
-                margin-top:         15px;
+                height:     40px;
+                margin-top: 15px;
             `;
         }
 
@@ -144,6 +173,7 @@
                 height:     40px;
                 margin-top: 15px;
                 text-align: center;
+                transition: all 0.3s ease-in;
                 background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff7086' : '#e2e2e2' };
 
                 &:focus
