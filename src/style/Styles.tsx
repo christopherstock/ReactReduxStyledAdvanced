@@ -1,6 +1,6 @@
 
-    import * as tl       from '../tl';
-    import styled, {css} from 'styled-components';
+    import * as tl                        from '../tl';
+    import styled, {StyledComponentClass} from 'styled-components';
 
     /*******************************************************************************************************************
     *   Defines all stylings for all styled components.
@@ -43,7 +43,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getAppPanel()
+        private static getAppPanel() : StyledComponentClass<any, any, any>
         {
             return styled.div`
                 background: #ffffff;
@@ -60,7 +60,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getAppTitle()
+        private static getAppTitle() : StyledComponentClass<any, any, any>
         {
             return styled.h1`
                 font-size: 35px;
@@ -73,7 +73,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getNewTaskButton()
+        private static getNewTaskButton() : StyledComponentClass<any, any, any>
         {
             return styled.input`
                 background:         #8c8c8c;
@@ -94,18 +94,18 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getNewTaskInput()
+        private static getNewTaskInput() : StyledComponentClass<any, any, any>
         {
             return styled.input`
                 width:      400px;
                 height:     40px;
                 margin-top: 15px;
                 text-align: center;
-                background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff7086' : '#cacaca' };
+                background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff7086' : '#e2e2e2' };
 
                 &:focus
                 {
-                    background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff8e95' : '#e2e2e2' };
+                    background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff7086' : '#cacaca' };
                 }
             `;
         }
@@ -115,7 +115,7 @@
         *
         *   @return The styling for the task list.
         ***************************************************************************************************************/
-        private static getTaskList()
+        private static getTaskList() : StyledComponentClass<any, any, any>
         {
             return styled.ul`
                 list-style-type: none;
@@ -127,7 +127,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getTaskListItem()
+        private static getTaskListItem() : StyledComponentClass<any, any, any>
         {
             return styled.li`
                 background:  #a5e2bf;
@@ -143,7 +143,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getTaskItemButton()
+        private static getTaskItemButton() : StyledComponentClass<any, any, any>
         {
             return styled.button`
                 background:     #8c8c8c;
