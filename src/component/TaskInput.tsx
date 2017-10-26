@@ -25,10 +25,11 @@
                 { /* new task input */ }
                 <tl.Styles.NewTaskInput
                     type="text"
-                    maxLength={ 50 }
-                    className={ this.props.inputError ? "input error" : "input" }
-                    value={     this.props.inputText }
+                    placeholder={ "New task description" }
+                    maxLength={   50 }
+                    value={       this.props.inputText }
                     onChange={  ( event:React.ChangeEvent<any> ) => { this.onInputChange( event ); } }
+                    inputError={ this.props.inputError }
                 />
 
                 <br />

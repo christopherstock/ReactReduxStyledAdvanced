@@ -1,4 +1,5 @@
 
+    import * as tl       from '../tl';
     import styled, {css} from 'styled-components';
 
     /*******************************************************************************************************************
@@ -9,13 +10,15 @@
     *******************************************************************************************************************/
     export class Styles
     {
-        public      static  AppPanel                :any                = null;
-        public      static  AppTitle                :any                = null;
-        public      static  NewTaskInput            :any                = null;
-        public      static  NewTaskButton           :any                = null;
-        public      static  TaskList                :any                = null;
-        public      static  TaskListItem            :any                = null;
-        public      static  TaskItemButton          :any                = null;
+        private     static  readonly    COLOR_FONT_DEFAULT      :string             = "#3d3d3d";
+
+        public      static              AppPanel                :any                = null;
+        public      static              AppTitle                :any                = null;
+        public      static              NewTaskInput            :any                = null;
+        public      static              NewTaskButton           :any                = null;
+        public      static              TaskList                :any                = null;
+        public      static              TaskListItem            :any                = null;
+        public      static              TaskItemButton          :any                = null;
 
         /***************************************************************************************************************
         *   Styles the application component.
@@ -61,7 +64,7 @@
         {
             return styled.h1`
                 font-size: 35px;
-                color:     #3d3d3d;
+                color:     ${ Styles.COLOR_FONT_DEFAULT };
             `;
         }
 
@@ -98,11 +101,11 @@
                 height:     40px;
                 margin-top: 15px;
                 text-align: center;
-                background: #e2e2e2;                
+                background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff7086' : '#cacaca' };
 
                 &:focus
                 {
-                    background: #cacaca;
+                    background: ${ ( props:tl.TaskInputProps ) => props.inputError ? '#ff8e95' : '#e2e2e2' };
                 }
             `;
         }

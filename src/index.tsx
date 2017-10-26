@@ -11,7 +11,7 @@
     window.onload = function()
     {
         // specify the application title
-        let APPLICATION_TITLE:string = "Redux Styled Components";
+        let APPLICATION_TITLE:string = "React Redux Styled Components";
 
         // acclaim debug console and set page title
         console.log(     APPLICATION_TITLE );

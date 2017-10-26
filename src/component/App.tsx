@@ -6,6 +6,7 @@
     *   The entire application component.
     *   This is an example for a stateful component.
     *
+    *   TODO Style body and * via styled components?
     *   TODO Solve all basic and advanced technics of Styled components.
     *   TODO Solve styled components and replace old styles.css!
     *   TODO Add TypeScript typings to Styles.

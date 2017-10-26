@@ -8,16 +8,11 @@
     export interface TaskInputProps
     {
         inputError        :boolean;
-
         inputText         :string;
 
         onTaskCreate      :Function;
-
         onSetInputField   :Function;
-
         onSetInputError   :Function;
-
         onClearInputField :Function;
-
         onClearInputError :Function;
     }
