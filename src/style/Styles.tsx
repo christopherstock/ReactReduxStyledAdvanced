@@ -1,6 +1,7 @@
 
-    import * as tl                             from '../tl';
-    import styled, {StyledComponentClass, css} from 'styled-components';
+    import *                   as tl    from '../tl';
+    import styled, {keyframes}          from 'styled-components';
+    import *                   as React from 'react';
 
     /*******************************************************************************************************************
     *   Defines all stylings for all styled components.
@@ -13,6 +14,8 @@
         private     static  readonly    COLOR_FONT_DEFAULT      :string             = "#3d3d3d";
 
         public      static              BasicButton             :any                = null;
+
+        public      static              AnimationFadeIn         :any                = null;
 
         public      static              AppPanel                :any                = null;
         public      static              AppTitle                :any                = null;
@@ -29,15 +32,17 @@
         ***************************************************************************************************************/
         public static init()
         {
-            this.BasicButton    = Styles.createBasicButton();
+            this.BasicButton     = Styles.createBasicButton();
 
-            this.AppPanel       = Styles.createAppPanel();
-            this.AppTitle       = Styles.createAppTitle();
-            this.NewTaskInput   = Styles.createNewTaskInput();
-            this.NewTaskButton  = Styles.createNewTaskButton();
-            this.TaskList       = Styles.createTaskList();
-            this.TaskListItem   = Styles.createTaskListItem();
-            this.TaskItemButton = Styles.createTaskItemButton();
+            this.AnimationFadeIn = Styles.createAnimationFadeIn();
+
+            this.AppPanel        = Styles.createAppPanel();
+            this.AppTitle        = Styles.createAppTitle();
+            this.NewTaskInput    = Styles.createNewTaskInput();
+            this.NewTaskButton   = Styles.createNewTaskButton();
+            this.TaskList        = Styles.createTaskList();
+            this.TaskListItem    = Styles.createTaskListItem();
+            this.TaskItemButton  = Styles.createTaskItemButton();
         }
 
         /***************************************************************************************************************
@@ -45,7 +50,7 @@
         *
         *   @return The styling for a basic button.
         ***************************************************************************************************************/
-        private static createBasicButton() : any
+        private static createBasicButton() : React.DetailedHTMLProps<any, any>
         {
             return styled.input`
                 background: #8c8c8c;
@@ -65,11 +70,31 @@
         }
 
         /***************************************************************************************************************
+        *   Creates a 'fade in' animation.
+        *
+        *   @return The 'fade in' animation.
+        ***************************************************************************************************************/
+        private static createAnimationFadeIn() : string
+        {
+            return keyframes`
+                from 
+                {
+                    opacity: 0.0; 
+                } 
+                
+                to 
+                { 
+                    opacity: 1.0; 
+                }
+            `;
+        }
+
+        /***************************************************************************************************************
         *   Styles the application component.
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createAppPanel() : StyledComponentClass<any, any, any>
+        private static createAppPanel() : React.DetailedHTMLProps<any, any>
         {
             return styled.div`
                 background: #ffffff;
@@ -86,7 +111,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createAppTitle() : StyledComponentClass<any, any, any>
+        private static createAppTitle() : React.DetailedHTMLProps<any, any>
         {
             return styled.h1`
                 font-size: 35px;
@@ -99,7 +124,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createNewTaskButton() : StyledComponentClass<any, any, any>
+        private static createNewTaskButton() : React.DetailedHTMLProps<any, any>
         {
             return Styles.BasicButton.extend`
                 height:             40px;
@@ -112,7 +137,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createNewTaskInput() : StyledComponentClass<any, any, any>
+        private static createNewTaskInput() : React.DetailedHTMLProps<any, any>
         {
             return styled.input`
                 width:      400px;
@@ -133,7 +158,7 @@
         *
         *   @return The styling for the task list.
         ***************************************************************************************************************/
-        private static createTaskList() : StyledComponentClass<any, any, any>
+        private static createTaskList() : React.DetailedHTMLProps<any, any>
         {
             return styled.ul`
                 list-style-type: none;
@@ -145,11 +170,11 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createTaskListItem() : StyledComponentClass<any, any, any>
+        private static createTaskListItem() : React.DetailedHTMLProps<any, any>
         {
             return styled.li`
                 background:  #a5e2bf;
-                animation:   fadeIn 1.0s ease-in;
+                animation:   ${ Styles.AnimationFadeIn } 1.0s ease-in;
                 height:      40px;
                 line-height: 40px;
                 margin-top:  15px;
@@ -161,7 +186,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static createTaskItemButton() : StyledComponentClass<any, any, any>
+        private static createTaskItemButton() : React.DetailedHTMLProps<any, any>
         {
             return Styles.BasicButton.extend`
                 float:          right;
