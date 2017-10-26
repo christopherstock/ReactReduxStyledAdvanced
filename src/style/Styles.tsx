@@ -1,6 +1,6 @@
 
-    import * as tl                        from '../tl';
-    import styled, {StyledComponentClass} from 'styled-components';
+    import * as tl                             from '../tl';
+    import styled, {StyledComponentClass, css} from 'styled-components';
 
     /*******************************************************************************************************************
     *   Defines all stylings for all styled components.
@@ -11,6 +11,8 @@
     export class Styles
     {
         private     static  readonly    COLOR_FONT_DEFAULT      :string             = "#3d3d3d";
+
+        public      static              BasicButton             :any                = null;
 
         public      static              AppPanel                :any                = null;
         public      static              AppTitle                :any                = null;
@@ -27,15 +29,39 @@
         ***************************************************************************************************************/
         public static init()
         {
-            this.AppPanel       = Styles.getAppPanel();
-            this.AppTitle       = Styles.getAppTitle();
+            this.BasicButton    = Styles.createBasicButton();
 
-            this.NewTaskInput   = Styles.getNewTaskInput();
-            this.NewTaskButton  = Styles.getNewTaskButton();
+            this.AppPanel       = Styles.createAppPanel();
+            this.AppTitle       = Styles.createAppTitle();
+            this.NewTaskInput   = Styles.createNewTaskInput();
+            this.NewTaskButton  = Styles.createNewTaskButton();
+            this.TaskList       = Styles.createTaskList();
+            this.TaskListItem   = Styles.createTaskListItem();
+            this.TaskItemButton = Styles.createTaskItemButton();
+        }
 
-            this.TaskList       = Styles.getTaskList();
-            this.TaskListItem   = Styles.getTaskListItem();
-            this.TaskItemButton = Styles.getTaskItemButton();
+        /***************************************************************************************************************
+        *   Styles basic buttons.
+        *
+        *   @return The styling for a basic button.
+        ***************************************************************************************************************/
+        private static createBasicButton() : any
+        {
+            return styled.input`
+                background: #8c8c8c;
+                color:      #ffffff;
+                padding:    0 10px 0 10px;
+
+                &:hover
+                {
+                    background: #a8a8a8;
+                }
+
+                &:disabled
+                {
+                    background: #c5c5c5;
+                }
+            `;
         }
 
         /***************************************************************************************************************
@@ -43,7 +69,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getAppPanel() : StyledComponentClass<any, any, any>
+        private static createAppPanel() : StyledComponentClass<any, any, any>
         {
             return styled.div`
                 background: #ffffff;
@@ -60,7 +86,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getAppTitle() : StyledComponentClass<any, any, any>
+        private static createAppTitle() : StyledComponentClass<any, any, any>
         {
             return styled.h1`
                 font-size: 35px;
@@ -73,19 +99,11 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getNewTaskButton() : StyledComponentClass<any, any, any>
+        private static createNewTaskButton() : StyledComponentClass<any, any, any>
         {
-            return styled.input`
-                background:         #8c8c8c;
-                color:              #ffffff;
-                padding:            0 10px 0 10px;
+            return Styles.BasicButton.extend`
                 height:             40px;
                 margin-top:         15px;
-
-                &:hover
-                {
-                    background:     #a8a8a8;
-                }
             `;
         }
 
@@ -94,7 +112,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getNewTaskInput() : StyledComponentClass<any, any, any>
+        private static createNewTaskInput() : StyledComponentClass<any, any, any>
         {
             return styled.input`
                 width:      400px;
@@ -115,7 +133,7 @@
         *
         *   @return The styling for the task list.
         ***************************************************************************************************************/
-        private static getTaskList() : StyledComponentClass<any, any, any>
+        private static createTaskList() : StyledComponentClass<any, any, any>
         {
             return styled.ul`
                 list-style-type: none;
@@ -127,7 +145,7 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getTaskListItem() : StyledComponentClass<any, any, any>
+        private static createTaskListItem() : StyledComponentClass<any, any, any>
         {
             return styled.li`
                 background:  #a5e2bf;
@@ -143,25 +161,12 @@
         *
         *   @return The styling for the app title.
         ***************************************************************************************************************/
-        private static getTaskItemButton() : StyledComponentClass<any, any, any>
+        private static createTaskItemButton() : StyledComponentClass<any, any, any>
         {
-            return styled.button`
-                background:     #8c8c8c;
-                color:          #ffffff;
-                padding:        0 10px 0 10px;
+            return Styles.BasicButton.extend`
                 float:          right;
                 line-height:    30px;
                 margin:         5px;
-
-                &:hover
-                {
-                    background: #a8a8a8;
-                }
-
-                &:disabled
-                {
-                    background: #c5c5c5;
-                }
             `;
         }
     }

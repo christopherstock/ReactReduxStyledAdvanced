@@ -50,26 +50,26 @@
 
                         { /* Button 'Delete' */ }
                         <tl.Styles.TaskItemButton
+                            type="button"
                             onClick={ () => { this.props.onTaskDelete( index ); } }
-                        >
-                            &#10006;
-                        </tl.Styles.TaskItemButton>
+                            value="&#10006;"
+                        />
 
                         { /* Button 'Move Down' */ }
                         <tl.Styles.TaskItemButton
+                            type="button"
                             onClick={ () => { this.props.onTaskMoveDown( index ); } }
                             disabled={ index === this.props.taskList.length - 1 }
-                        >
-                            &#9660;
-                        </tl.Styles.TaskItemButton>
+                            value="&#9660;"
+                        />
 
                         { /* Button 'Move Up' */ }
                         <tl.Styles.TaskItemButton
+                            type="button"
                             onClick={ () => { this.props.onTaskMoveUp( index ); } }
                             disabled={ index === 0 }
-                        >
-                            &#9650;
-                        </tl.Styles.TaskItemButton>
+                            value="&#9650;"
+                        />
 
                     </tl.Styles.TaskListItem>
                 );
