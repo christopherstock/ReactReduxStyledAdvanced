@@ -20,8 +20,14 @@
         {
             console.log( "TaskList.render() being invoked" );
 
-            // animate main container height later
-            document.getElementById( "mainContainer" ).style.height = ( 150 + ( this.props.taskList.length * 55 ) ) + "px";
+            // animate appPanel height
+            let appPanel:HTMLDivElement = document.getElementById( "appPanel" ) as HTMLDivElement;
+            if ( appPanel != null )
+            {
+                appPanel.style.height = ( 150 + ( this.props.taskList.length * 55 ) ) + "px";
+            }
+
+            console.dir( document.getElementById( "appPanel" ) );
 
             return <tl.Styles.TaskList>
 
