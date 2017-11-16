@@ -31,11 +31,13 @@
                     >
                         Apply Default Theme
                     </tl.Styles.SwitchThemeButton>
+
                     <tl.Styles.SwitchThemeButton
                         onClick={ () => { this.props.onSwitchTheme( tl.Styles.ThemeMayflower ); } }
                     >
                         Apply Mayflower Theme
                     </tl.Styles.SwitchThemeButton>
+
                     <tl.Styles.SwitchThemeButton
                         onClick={ () => { this.props.onSwitchTheme( tl.Styles.ThemeLemon ); } }
                     >
