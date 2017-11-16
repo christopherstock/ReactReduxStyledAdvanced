@@ -25,13 +25,7 @@
             };
 
             const mapDispatchToProps:any = {
-/*
-                onTaskCreate:      tl.ActionCreator.createTaskAction,
-                onSetInputField:   tl.ActionCreator.setInputFieldAction,
-                onClearInputField: tl.ActionCreator.clearInputFieldAction,
-                onSetInputError:   tl.ActionCreator.setInputErrorAction,
-                onClearInputError: tl.ActionCreator.clearInputErrorAction,
-*/
+                onSwitchTheme: tl.ActionCreator.createThemeSwitchAction,
             };
 
             return ReactRedux.connect(

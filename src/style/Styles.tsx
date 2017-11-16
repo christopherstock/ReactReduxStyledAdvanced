@@ -20,6 +20,7 @@
 
         public      static              ThemeDefault            :any                    = null;
         public      static              ThemeMayflower          :any                    = null;
+        public      static              ThemeLemon              :any                    = null;
 
         public      static              BasicButton             :any                    = null;
 
@@ -45,6 +46,7 @@
 
             this.ThemeDefault      = Styles.createThemeDefault();
             this.ThemeMayflower    = Styles.createThemeMayflower();
+            this.ThemeLemon        = Styles.createThemeLemon();
 
             this.BasicButton       = Styles.createBasicButton();
 
@@ -286,7 +288,19 @@
         private static createThemeMayflower() : any
         {
             return {
-                mainColor: '#e2b699',
+                mainColor: '#f2c5a4',
+            };
+        }
+
+        /***************************************************************************************************************
+        *   Creates the 'lemon' theme.
+        *
+        *   @return The theme data.
+        ***************************************************************************************************************/
+        private static createThemeLemon() : any
+        {
+            return {
+                mainColor: '#f4f1ac',
             };
         }
     }

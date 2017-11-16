@@ -7,7 +7,6 @@
     *   The entire application component.
     *   This is an example for a stateful component.
     *
-    *   TODO Add theme switcher.
     *   TODO Remove redux handling of inputError and inputText in TaskInput component according to ReactRedux!
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *   TODO New class 'state' for Redux State according to ReactRedux project.
@@ -31,9 +30,21 @@
                 <tl.Styles.AppPanel>
 
                     { /* theme switchers */ }
-                    <tl.Styles.SwitchThemeButton>Apply Default Theme</tl.Styles.SwitchThemeButton>
-                    <tl.Styles.SwitchThemeButton>Apply Mayflower Theme</tl.Styles.SwitchThemeButton>
-                    <tl.Styles.SwitchThemeButton>Apply Nightly Theme</tl.Styles.SwitchThemeButton>
+                    <tl.Styles.SwitchThemeButton
+                        onClick={ () => { this.props.onSwitchTheme( tl.Styles.ThemeDefault ); } }
+                    >
+                        Apply Default Theme
+                    </tl.Styles.SwitchThemeButton>
+                    <tl.Styles.SwitchThemeButton
+                        onClick={ () => { this.props.onSwitchTheme( tl.Styles.ThemeMayflower ); } }
+                    >
+                        Apply Mayflower Theme
+                    </tl.Styles.SwitchThemeButton>
+                    <tl.Styles.SwitchThemeButton
+                        onClick={ () => { this.props.onSwitchTheme( tl.Styles.ThemeLemon ); } }
+                    >
+                        Apply Nightly Theme
+                    </tl.Styles.SwitchThemeButton>
 
                     { /* title */ }
                     <tl.Styles.AppTitle>{ this.props.title }</tl.Styles.AppTitle>

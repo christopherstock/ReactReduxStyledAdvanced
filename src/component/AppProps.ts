@@ -7,6 +7,8 @@
     *******************************************************************************************************************/
     export interface AppProps
     {
-        title        :string;
-        currentTheme :any;
+        title         :string;
+        currentTheme  :any;
+
+        onSwitchTheme :Function,
     }

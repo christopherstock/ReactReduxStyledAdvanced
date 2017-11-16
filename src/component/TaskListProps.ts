@@ -10,8 +10,6 @@
         taskList       :string[];
 
         onTaskDelete   :Function;
-
         onTaskMoveDown :Function;
-
         onTaskMoveUp   :Function;
     }

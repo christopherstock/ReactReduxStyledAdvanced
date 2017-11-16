@@ -24,7 +24,7 @@
             let appPanel:HTMLDivElement = document.getElementById( "appPanel" ) as HTMLDivElement;
             if ( appPanel != null )
             {
-                appPanel.style.height = ( 150 + ( this.props.taskList.length * 55 ) ) + "px";
+                appPanel.style.height = ( 190 + ( this.props.taskList.length * 55 ) ) + "px";
             }
 
             return <tl.Styles.TaskList>
