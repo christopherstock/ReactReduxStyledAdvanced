@@ -30,24 +30,10 @@
 
                 <tl.Styles.AppPanel>
 
-                    { /*
-
-                    <tl.Styles.NewTaskButton
-                        type="submit"
-                        value="Apply Default Theme"
-                    />
-
-                    <tl.Styles.NewTaskButton
-                        type="submit"
-                        value="Apply Mayflower Theme"
-                    />
-
-                    <tl.Styles.NewTaskButton
-                        type="submit"
-                        value="Apply NightlyTheme"
-                    />
-
-                    */ }
+                    { /* theme switchers */ }
+                    <tl.Styles.SwitchThemeButton>Apply Default Theme</tl.Styles.SwitchThemeButton>
+                    <tl.Styles.SwitchThemeButton>Apply Mayflower Theme</tl.Styles.SwitchThemeButton>
+                    <tl.Styles.SwitchThemeButton>Apply Nightly Theme</tl.Styles.SwitchThemeButton>
 
                     { /* title */ }
                     <tl.Styles.AppTitle>{ this.props.title }</tl.Styles.AppTitle>

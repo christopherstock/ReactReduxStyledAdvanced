@@ -5,6 +5,9 @@
     /*******************************************************************************************************************
     *   Defines all stylings for all styled components.
     *
+    *   TODO refactor names! group same elements!
+    *   TODO Fix doc blocks!
+    *
     *   More information on 'tagged template literals', a new feature in ES6, can be found here:
     *   @see https://www.styled-components.com/docs/advanced#tagged-template-literals
     *
@@ -29,6 +32,7 @@
         public      static              TaskList                :any                    = null;
         public      static              TaskListItem            :any                    = null;
         public      static              TaskItemButton          :any                    = null;
+        public      static              SwitchThemeButton       :any                    = null;
 
         /***************************************************************************************************************
         *   Styles the application component.
@@ -39,21 +43,22 @@
         {
             this.setGlobalStyle();
 
-            this.ThemeDefault    = Styles.createThemeDefault();
-            this.ThemeMayflower  = Styles.createThemeMayflower();
+            this.ThemeDefault      = Styles.createThemeDefault();
+            this.ThemeMayflower    = Styles.createThemeMayflower();
 
-            this.BasicButton     = Styles.createBasicButton();
+            this.BasicButton       = Styles.createBasicButton();
 
-            this.AnimationFadeIn = Styles.createAnimationFadeIn();
+            this.AnimationFadeIn   = Styles.createAnimationFadeIn();
 
-            this.AppTitle        = Styles.createAppTitle();
-            this.AppPanel        = Styles.createAppPanel();
+            this.AppTitle          = Styles.createAppTitle();
+            this.AppPanel          = Styles.createAppPanel();
 
-            this.NewTaskInput    = Styles.createNewTaskInput();
-            this.NewTaskButton   = Styles.createNewTaskButton();
-            this.TaskList        = Styles.createTaskList();
-            this.TaskListItem    = Styles.createTaskListItem();
-            this.TaskItemButton  = Styles.createTaskItemButton();
+            this.NewTaskInput      = Styles.createNewTaskInput();
+            this.NewTaskButton     = Styles.createNewTaskButton();
+            this.SwitchThemeButton = Styles.createSwitchThemeButton();
+            this.TaskList          = Styles.createTaskList();
+            this.TaskListItem      = Styles.createTaskListItem();
+            this.TaskItemButton    = Styles.createTaskItemButton();
         }
 
         /***************************************************************************************************************
@@ -186,6 +191,28 @@
             return Styles.BasicButton.extend`
                 height:     40px;
                 margin-top: 15px;
+            `;
+        }
+
+        /***************************************************************************************************************
+        *   Styles the application title.
+        *
+        *   @return The styling for the app title.
+        ***************************************************************************************************************/
+        private static createSwitchThemeButton() : any
+        {
+            const button = Styles.BasicButton.withComponent('button');
+
+            return button.extend`
+                height:     25px;
+                margin:     0 10px 15px 15px;
+                background: #cdcdcd;
+                font-size:  12px;
+                
+                &:focus
+                {
+                    background: #e0e0e0; 
+                }
             `;
         }
 
