@@ -1,14 +1,13 @@
 
     import * as React from 'react';
     import * as tl    from '../tl';
+    import { ThemeProvider} from "styled-components";
 
     /*******************************************************************************************************************
     *   The entire application component.
     *   This is an example for a stateful component.
     *
-    *   TODO Solve all basic and advanced technics of Styled components.
     *   TODO Add theme switcher.
-    *   TODO Refactor index.tsx to class and methods??
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *
     *   @author  Christopher Stock
@@ -25,22 +24,21 @@
         {
             console.log( "App.render() being invoked" );
 
-            // TODO outsource -- will change if theme changes!
-            // this method is only being passed once in the applications lifecycle!
-            const TaskInput:any = tl.Connector.connectTaskInput();
-            const TaskList:any  = tl.Connector.connectTaskList();
+            return <ThemeProvider theme={ tl.Styles.ThemeDefault }>
 
-            return <tl.Styles.AppPanel>
+                <tl.Styles.AppPanel>
 
-                { /* title */ }
-                <tl.Styles.AppTitle>{ this.props.title }</tl.Styles.AppTitle>
+                    { /* title */ }
+                    <tl.Styles.AppTitle>{ this.props.title }</tl.Styles.AppTitle>
 
-                { /* task input form */ }
-                <TaskInput />
+                    { /* task input form */ }
+                    <tl.TaskInput />
 
-                { /* task list */ }
-                <TaskList />
+                    { /* task list */ }
+                    <tl.TaskList />
 
-            </tl.Styles.AppPanel>;
+                </tl.Styles.AppPanel>
+
+            </ThemeProvider>;
         }
     }

@@ -9,7 +9,7 @@
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
-    export class TaskInputUnconnected extends React.Component<tl.TaskInputProps, null>
+    class TaskInputUnconnected extends React.Component<tl.TaskInputProps, null>
     {
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
@@ -93,3 +93,5 @@
             }
         };
     }
+
+    export const TaskInput:any = tl.Connector.connectTaskInput( TaskInputUnconnected );

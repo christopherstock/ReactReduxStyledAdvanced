@@ -16,7 +16,7 @@
         *
         *   @return The connected react component.
         ***************************************************************************************************************/
-        public static connectTaskInput() : ReactRedux.ComponentClass<tl.TaskInputProps>
+        public static connectTaskInput( component:ReactRedux.ComponentClass<tl.TaskInputProps> ) : ReactRedux.ComponentClass<tl.TaskInputProps>
         {
             const mapStateToProps:any = ( state:tl.State) : any => {
                 return {
@@ -36,7 +36,7 @@
             return ReactRedux.connect(
                 mapStateToProps,
                 mapDispatchToProps
-            )( tl.TaskInputUnconnected );
+            )( component );
         }
 
         /***************************************************************************************************************
@@ -44,7 +44,7 @@
         *
         *   @return The connected react component.
         ***************************************************************************************************************/
-        public static connectTaskList() : ReactRedux.ComponentClass<tl.TaskListProps>
+        public static connectTaskList( component:ReactRedux.ComponentClass<tl.TaskListProps> ) : ReactRedux.ComponentClass<tl.TaskListProps>
         {
             const mapStateToProps:any = ( state:tl.State ) : any => {
                 return {
@@ -61,6 +61,6 @@
             return ReactRedux.connect(
                 mapStateToProps,
                 mapDispatchToProps
-            )( tl.TaskListUnconnected );
+            )( component );
         }
     }

@@ -15,6 +15,9 @@
     {
         private     static  readonly    COLOR_FONT_DEFAULT      :string                 = "#3d3d3d";
 
+        public      static              ThemeDefault            :any                    = null;
+        public      static              ThemeMayflower          :any                    = null;
+
         public      static              BasicButton             :any                    = null;
 
         public      static              AnimationFadeIn         :SimpleInterpolation    = null;
@@ -35,6 +38,9 @@
         public static init()
         {
             this.setGlobalStyle();
+
+            this.ThemeDefault    = Styles.createThemeDefault();
+            this.ThemeMayflower  = Styles.createThemeMayflower();
 
             this.BasicButton     = Styles.createBasicButton();
 
@@ -225,11 +231,35 @@
         private static createTaskListItem() : any
         {
             return styled.li`
-                background:  #a5e2bf;
+                background:  ${ props => props.theme.mainColor };
                 animation:   ${ Styles.AnimationFadeIn } 0.5s ease-in;
                 height:      40px;
                 line-height: 40px;
                 margin-top:  15px;
             `;
+        }
+
+        /***************************************************************************************************************
+        *   Creates the 'default' theme.
+        *
+        *   @return The theme data.
+        ***************************************************************************************************************/
+        private static createThemeDefault() : any
+        {
+            return {
+                mainColor: '#a5e2bf',
+            };
+        }
+
+        /***************************************************************************************************************
+        *   Creates the 'mayflower' theme.
+        *
+        *   @return The theme data.
+        ***************************************************************************************************************/
+        private static createThemeMayflower() : any
+        {
+            return {
+                mainColor: '#e2b699',
+            };
         }
     }

@@ -1,6 +1,6 @@
 
-    import * as React    from 'react';
-    import * as tl       from '../tl';
+    import * as React from 'react';
+    import * as tl    from '../tl';
 
     /*******************************************************************************************************************
     *   Represents the TaskList component.
@@ -9,7 +9,7 @@
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
-    export class TaskListUnconnected extends React.Component<tl.TaskListProps, null>
+    class TaskListUnconnected extends React.Component<tl.TaskListProps, null>
     {
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
@@ -26,8 +26,6 @@
             {
                 appPanel.style.height = ( 150 + ( this.props.taskList.length * 55 ) ) + "px";
             }
-
-            console.dir( document.getElementById( "appPanel" ) );
 
             return <tl.Styles.TaskList>
 
@@ -84,3 +82,5 @@
             return items;
         }
     }
+
+    export const TaskList:any  = tl.Connector.connectTaskList( TaskListUnconnected );
