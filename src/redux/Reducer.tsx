@@ -55,34 +55,6 @@
                     break;
                 }
 
-
-
-
-
-                case tl.ActionCreator.ACTION_SET_INPUT_FIELD:
-                {
-                    newState = Reducer.setInputFieldReducer( state, action );
-                    break;
-                }
-
-                case tl.ActionCreator.ACTION_CLEAR_INPUT_FIELD:
-                {
-                    newState = Reducer.clearInputFieldReducer( state );
-                    break;
-                }
-
-                case tl.ActionCreator.ACTION_SET_INPUT_ERROR:
-                {
-                    newState = Reducer.setInputErrorReducer( state );
-                    break;
-                }
-
-                case tl.ActionCreator.ACTION_CLEAR_INPUT_ERROR:
-                {
-                    newState = Reducer.clearInputErrorReducer( state );
-                    break;
-                }
-
                 default:
                 {
                     newState = state;
@@ -201,82 +173,6 @@
                 taskList:    state.taskList,
                 globalTheme: action.newTheme,
                 inputError:  state.inputError,
-                inputText:   state.inputText,
-            };
-        }
-
-
-
-
-
-
-
-
-        /***************************************************************************************************************
-        *   Reduces the state in order to set a text for the input field.
-        *
-        *   @param state  The existing state object.
-        *   @param action The action to perform on the state object.
-        *
-        *   @return The new and reduced state object.
-        ***************************************************************************************************************/
-        private static setInputFieldReducer( state:tl.State, action:tl.Action ) : tl.State
-        {
-            return {
-                taskList:    state.taskList,
-                globalTheme: state.globalTheme,
-                inputError:  state.inputError,
-                inputText:   action.inputText,
-            };
-        }
-
-        /***************************************************************************************************************
-        *   Reduces the state in order to clear the text in the input field.
-        *
-        *   @param state The existing state object.
-        *
-        *   @return The new and reduced state object.
-        ***************************************************************************************************************/
-        private static clearInputFieldReducer( state:tl.State ) : tl.State
-        {
-            return {
-                taskList:    state.taskList,
-                globalTheme: state.globalTheme,
-                inputError:  state.inputError,
-                inputText:   "",
-            };
-        }
-
-        /***************************************************************************************************************
-        *   Reduces the state in order to set the input error for the input field.
-        *
-        *   @param state The existing state object.
-        *
-        *   @return The new and reduced state object.
-        ***************************************************************************************************************/
-        private static setInputErrorReducer( state:tl.State ) : tl.State
-        {
-            return {
-                taskList:    state.taskList,
-                globalTheme: state.globalTheme,
-                inputError:  true,
-                inputText:   state.inputText,
-            };
-        }
-
-        /***************************************************************************************************************
-        *   Reduces the state in order to clear the input error for the input field.
-        *
-        *   @param state The existing state object.
-        *
-        *   @return The new and reduced state object.
-        ***************************************************************************************************************/
-        private static clearInputErrorReducer( state:tl.State ) : tl.State
-        {
-            return {
-                taskList:    state.taskList,
-                globalTheme: state.globalTheme,
-                inputError:  false,
                 inputText:   state.inputText,
             };
         }

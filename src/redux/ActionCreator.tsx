@@ -14,10 +14,6 @@
         public  static  readonly    ACTION_MOVE_TASK_UP         :string         = 'ACTION_MOVE_TASK_UP';
         public  static  readonly    ACTION_MOVE_TASK_DOWN       :string         = 'ACTION_MOVE_TASK_DOWN';
         public  static  readonly    ACTION_SWITCH_THEME         :string         = 'ACTION_SWITCH_THEME';
-        public  static  readonly    ACTION_SET_INPUT_FIELD      :string         = 'ACTION_SET_INPUT_FIELD';
-        public  static  readonly    ACTION_CLEAR_INPUT_FIELD    :string         = 'ACTION_CLEAR_INPUT_FIELD';
-        public  static  readonly    ACTION_SET_INPUT_ERROR      :string         = 'ACTION_SET_INPUT_ERROR';
-        public  static  readonly    ACTION_CLEAR_INPUT_ERROR    :string         = 'ACTION_CLEAR_INPUT_ERROR';
 
         /***************************************************************************************************************
         *   Specifies the redux action 'create task'.
@@ -91,61 +87,6 @@
             return {
                 type:     ActionCreator.ACTION_SWITCH_THEME,
                 newTheme: newTheme,
-            }
-        }
-
-
-
-
-
-        /***************************************************************************************************************
-        *   Specifies the redux action 'set input field'.
-        *
-        *   @param inputText The text to set into the input field.
-        *
-        *   @return The action object for setting the input field.
-        ***************************************************************************************************************/
-        public static setInputFieldAction( inputText:string ) : tl.Action
-        {
-            return {
-                type:      ActionCreator.ACTION_SET_INPUT_FIELD,
-                inputText: inputText,
-            }
-        }
-
-        /***************************************************************************************************************
-        *   Specifies the redux action 'clear input field'.
-        *
-        *   @return The action object for clearing the input field.
-        ***************************************************************************************************************/
-        public static clearInputFieldAction() : tl.Action
-        {
-            return {
-                type: ActionCreator.ACTION_CLEAR_INPUT_FIELD,
-            }
-        }
-
-        /***************************************************************************************************************
-        *   Specifies the redux action 'set input error'.
-        *
-        *   @return The action object for setting the input error.
-        ***************************************************************************************************************/
-        public static setInputErrorAction() : tl.Action
-        {
-            return {
-                type: ActionCreator.ACTION_SET_INPUT_ERROR,
-            }
-        }
-
-        /***************************************************************************************************************
-        *   Specifies the redux action 'clear input error'.
-        *
-        *   @return The action object for clearing the input error.
-        ***************************************************************************************************************/
-        public static clearInputErrorAction() : tl.Action
-        {
-            return {
-                type: ActionCreator.ACTION_CLEAR_INPUT_ERROR,
             }
         }
     }
