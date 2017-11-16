@@ -17,6 +17,9 @@
         console.log(     APPLICATION_TITLE );
         document.title = APPLICATION_TITLE;
 
+        // init styled components
+        tl.Styles.init();
+
         // create redux store
         let store:ReactRedux.Store<tl.State> = Redux.createStore( tl.Reducer.taskListReducer );
 
@@ -24,9 +27,6 @@
         store.dispatch( tl.ActionCreator.createTaskAction( "Müll rausbringen" ) );
         store.dispatch( tl.ActionCreator.createTaskAction( "Abwaschen"        ) );
         store.dispatch( tl.ActionCreator.createTaskAction( "Wäsche waschen"   ) );
-
-        // init styled components
-        tl.Styles.init();
 
         // render the App component into the main container
 

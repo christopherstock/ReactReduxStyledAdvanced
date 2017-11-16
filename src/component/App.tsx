@@ -8,13 +8,13 @@
     *   This is an example for a stateful component.
     *
     *   TODO Add theme switcher.
-    *   TODO Remove redux handling of inputError and inputText in TaskInput component.
+    *   TODO Remove redux handling of inputError and inputText in TaskInput component according to ReactRedux!
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
-    export class App extends React.Component<tl.AppProps, null>
+    class AppUnconnected extends React.Component<tl.AppProps, null>
     {
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
@@ -25,7 +25,7 @@
         {
             console.log( "App.render() being invoked" );
 
-            return <ThemeProvider theme={ tl.Styles.ThemeDefault }>
+            return <ThemeProvider theme={ this.props.currentTheme }>
 
                 <tl.Styles.AppPanel>
 
@@ -43,3 +43,5 @@
             </ThemeProvider>;
         }
     }
+
+    export const App:any = tl.Connector.connectApp( AppUnconnected );
