@@ -18,13 +18,13 @@
         ***************************************************************************************************************/
         public static connectApp( component:ReactRedux.ComponentClass<tl.AppProps> ) : ReactRedux.ComponentClass<tl.AppProps>
         {
-            const mapStateToProps:any = ( state:tl.State) : any => {
+            const mapStateToProps:ReactRedux.MapStateToProps<tl.State, tl.AppProps> = ( state:tl.State) : any => {
                 return {
                     currentTheme: state.globalTheme,
                 }
             };
 
-            const mapDispatchToProps:any = {
+            const mapDispatchToProps:ReactRedux.MapDispatchToPropsParam<any, tl.AppProps> = {
                 onSwitchTheme: tl.ActionCreator.createThemeSwitchAction,
             };
 
@@ -41,19 +41,15 @@
         ***************************************************************************************************************/
         public static connectTaskInput( component:ReactRedux.ComponentClass<tl.TaskInputProps> ) : ReactRedux.ComponentClass<tl.TaskInputProps>
         {
-            const mapStateToProps:any = ( state:tl.State) : any => {
+            const mapStateToProps:ReactRedux.MapStateToProps<tl.State, tl.TaskInputProps> = ( state:tl.State ) : any => {
                 return {
                     inputError: state.inputError,
                     inputText:  state.inputText,
                 }
             };
 
-            const mapDispatchToProps:any = {
-                onTaskCreate:      tl.ActionCreator.createTaskAction,
-                onSetInputField:   tl.ActionCreator.setInputFieldAction,
-                onClearInputField: tl.ActionCreator.clearInputFieldAction,
-                onSetInputError:   tl.ActionCreator.setInputErrorAction,
-                onClearInputError: tl.ActionCreator.clearInputErrorAction,
+            const mapDispatchToProps:ReactRedux.MapDispatchToPropsParam<any, tl.TaskInputProps> = {
+                onTaskCreate: tl.ActionCreator.createTaskAction,
             };
 
             return ReactRedux.connect(
@@ -69,13 +65,13 @@
         ***************************************************************************************************************/
         public static connectTaskList( component:ReactRedux.ComponentClass<tl.TaskListProps> ) : ReactRedux.ComponentClass<tl.TaskListProps>
         {
-            const mapStateToProps:any = ( state:tl.State ) : any => {
+            const mapStateToProps:ReactRedux.MapStateToProps<tl.State, tl.TaskListProps> = ( state:tl.State ) : any => {
                 return {
                     taskList: state.taskList
                 }
             };
 
-            const mapDispatchToProps:any = {
+            const mapDispatchToProps:ReactRedux.MapDispatchToPropsParam<any, tl.TaskListProps> = {
                 onTaskDelete:   tl.ActionCreator.deleteTaskAction,
                 onTaskMoveUp:   tl.ActionCreator.moveTaskUpAction,
                 onTaskMoveDown: tl.ActionCreator.moveTaskDownAction,

@@ -41,7 +41,7 @@
                     <tl.Styles.SwitchThemeButton
                         onClick={ () => { this.props.onSwitchTheme( tl.Styles.ThemeLemon ); } }
                     >
-                        Apply Nightly Theme
+                        Apply Lemon Theme
                     </tl.Styles.SwitchThemeButton>
 
                     { /* title */ }

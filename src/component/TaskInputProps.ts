@@ -8,8 +8,4 @@
     export interface TaskInputProps
     {
         onTaskCreate      :Function;
-        onSetInputField   :Function;
-        onSetInputError   :Function;
-        onClearInputField :Function;
-        onClearInputError :Function;
     }
