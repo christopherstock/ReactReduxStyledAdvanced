@@ -1,15 +1,12 @@
 
     /*******************************************************************************************************************
-    *   All properties of the 'TaskInput' component.
+    *   The state for the 'TaskInput' component.
     *
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
-    export interface TaskInputProps
+    export interface TaskInputState
     {
-        onTaskCreate      :Function;
-        onSetInputField   :Function;
-        onSetInputError   :Function;
-        onClearInputField :Function;
-        onClearInputError :Function;
+        inputError        :boolean;
+        inputText         :string;
     }

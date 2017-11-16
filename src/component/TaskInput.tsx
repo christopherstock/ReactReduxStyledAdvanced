@@ -9,8 +9,23 @@
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
-    class TaskInputUnconnected extends React.Component<tl.TaskInputProps, null>
+    class TaskInputUnconnected extends React.Component<tl.TaskInputProps, tl.TaskInputState>
     {
+        /***************************************************************************************************************
+        *   Initializes this component by setting the initial state.
+        *
+        *   @param {Object} props The initial properties being passed in the component tag.
+        ***************************************************************************************************************/
+        constructor( props:tl.TaskInputProps )
+        {
+            super( props );
+
+            this.state = {
+                inputError: false,
+                inputText:  "",
+            }
+        }
+
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
@@ -27,9 +42,9 @@
                     type="text"
                     placeholder={ "New task description" }
                     maxLength={   50 }
-                    value={       this.props.inputText }
+                    value={       this.state.inputText }
                     onChange={  ( event:React.ChangeEvent<any> ) => { this.onInputChange( event ); } }
-                    inputError={ this.props.inputError }
+                    inputError={ this.state.inputError }
                 />
 
                 <br />
@@ -52,9 +67,12 @@
         {
             console.log( "TaskInput.onInputChange being invoked" );
 
-            // assign text to input field
-            this.props.onClearInputError();
-            this.props.onSetInputField( event.target.value );
+            this.setState(
+                {
+                    inputError: false,
+                    inputText:  event.target.value,
+                }
+            );
         }
 
         /***************************************************************************************************************
@@ -70,7 +88,7 @@
             event.preventDefault();
 
             // trim entered text
-            let enteredText = this.props.inputText.trim();
+            let enteredText = this.state.inputText.trim();
 
             // check entered text
             console.log( "Trimmed text in the box is [" + enteredText + "]" );
@@ -79,14 +97,22 @@
                 console.log( "Empty text input detected." );
 
                 // set error state
-                this.props.onSetInputError();
-                this.props.onClearInputField();
+                this.setState(
+                    {
+                        inputError: true,
+                        inputText:  "",
+                    }
+                );
             }
             else
             {
                 // clear error state
-                this.props.onClearInputError();
-                this.props.onClearInputField();
+                this.setState(
+                    {
+                        inputError: false,
+                        inputText:  "",
+                    }
+                );
 
                 // invoke parent listener
                 this.props.onTaskCreate( enteredText );

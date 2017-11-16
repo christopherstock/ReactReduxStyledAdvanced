@@ -210,8 +210,8 @@
                 margin:     0 10px 15px 15px;
                 background: #cdcdcd;
                 font-size:  12px;
-                
-                &:focus
+
+                &:hover
                 {
                     background: #e0e0e0; 
                 }
