@@ -28,9 +28,6 @@
         store.dispatch( tl.ActionCreator.createTaskAction( "Abwaschen"        ) );
         store.dispatch( tl.ActionCreator.createTaskAction( "Wäsche waschen"   ) );
 
-        // dispatch new app theme
-        store.dispatch( tl.ActionCreator.createThemeSwitchAction( tl.Styles.ThemeMayflower ) );
-
         // create and add a new main container
         let mainContainer:HTMLDivElement = document.createElement( 'div' );
         mainContainer.id = "mainContainer";

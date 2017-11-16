@@ -30,6 +30,25 @@
 
                 <tl.Styles.AppPanel>
 
+                    { /*
+
+                    <tl.Styles.NewTaskButton
+                        type="submit"
+                        value="Apply Default Theme"
+                    />
+
+                    <tl.Styles.NewTaskButton
+                        type="submit"
+                        value="Apply Mayflower Theme"
+                    />
+
+                    <tl.Styles.NewTaskButton
+                        type="submit"
+                        value="Apply NightlyTheme"
+                    />
+
+                    */ }
+
                     { /* title */ }
                     <tl.Styles.AppTitle>{ this.props.title }</tl.Styles.AppTitle>
 
