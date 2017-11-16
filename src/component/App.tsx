@@ -8,6 +8,7 @@
     *   This is an example for a stateful component.
     *
     *   TODO Remove redux handling of inputError and inputText in TaskInput component according to ReactRedux!
+    *   TODO State from interface to class!
     *
     *   @author  Christopher Stock
     *   @version 1.0
