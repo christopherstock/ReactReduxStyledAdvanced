@@ -99,9 +99,10 @@
             newTasks.push( action.taskName );
 
             return {
-                taskList:   newTasks,
-                inputError: state.inputError,
-                inputText:  state.inputText,
+                taskList:    newTasks,
+                globalTheme: state.globalTheme,
+                inputError:  state.inputError,
+                inputText:   state.inputText,
             };
         }
 
@@ -119,9 +120,10 @@
             newTasks.splice( action.taskIndex, 1 );
 
             return {
-                taskList:   newTasks,
-                inputError: state.inputError,
-                inputText:  state.inputText,
+                taskList:    newTasks,
+                globalTheme: state.globalTheme,
+                inputError:  state.inputError,
+                inputText:   state.inputText,
             };
         }
 
@@ -143,9 +145,10 @@
             newTasks[ action.taskIndex     ] = taskToMoveDown;
 
             return {
-                taskList:   newTasks,
-                inputError: state.inputError,
-                inputText:  state.inputText,
+                taskList:    newTasks,
+                globalTheme: state.globalTheme,
+                inputError:  state.inputError,
+                inputText:   state.inputText,
             };
         }
 
@@ -167,9 +170,10 @@
             newTasks[ action.taskIndex + 1 ] = taskToMoveDown;
 
             return {
-                taskList:   newTasks,
-                inputError: state.inputError,
-                inputText:  state.inputText,
+                taskList:    newTasks,
+                globalTheme: state.globalTheme,
+                inputError:  state.inputError,
+                inputText:   state.inputText,
             };
         }
 
@@ -184,9 +188,10 @@
         private static setInputFieldReducer( state:tl.State, action:tl.Action ) : tl.State
         {
             return {
-                taskList:   state.taskList,
-                inputError: state.inputError,
-                inputText:  action.inputText,
+                taskList:    state.taskList,
+                globalTheme: state.globalTheme,
+                inputError:  state.inputError,
+                inputText:   action.inputText,
             };
         }
 
@@ -200,9 +205,10 @@
         private static clearInputFieldReducer( state:tl.State ) : tl.State
         {
             return {
-                taskList:   state.taskList,
-                inputError: state.inputError,
-                inputText:  "",
+                taskList:    state.taskList,
+                globalTheme: state.globalTheme,
+                inputError:  state.inputError,
+                inputText:   "",
             };
         }
 
@@ -216,9 +222,10 @@
         private static setInputErrorReducer( state:tl.State ) : tl.State
         {
             return {
-                taskList:   state.taskList,
-                inputError: true,
-                inputText:  state.inputText,
+                taskList:    state.taskList,
+                globalTheme: state.globalTheme,
+                inputError:  true,
+                inputText:   state.inputText,
             };
         }
 
@@ -232,9 +239,10 @@
         private static clearInputErrorReducer( state:tl.State ) : tl.State
         {
             return {
-                taskList:   state.taskList,
-                inputError: false,
-                inputText:  state.inputText,
+                taskList:    state.taskList,
+                globalTheme: state.globalTheme,
+                inputError:  false,
+                inputText:   state.inputText,
             };
         }
 
@@ -246,9 +254,10 @@
         private static createDefaultState() : tl.State
         {
             return {
-                taskList:   [],
-                inputError: false,
-                inputText:  "",
+                taskList:    [],
+                globalTheme: tl.Styles.ThemeDefault,
+                inputError:  false,
+                inputText:   "",
             };
         }
     }

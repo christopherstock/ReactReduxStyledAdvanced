@@ -8,6 +8,7 @@
     *   This is an example for a stateful component.
     *
     *   TODO Add theme switcher.
+    *   TODO Remove redux handling of inputError and inputText in TaskInput component.
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
     *
     *   @author  Christopher Stock

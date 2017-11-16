@@ -7,7 +7,8 @@
     *******************************************************************************************************************/
     export interface State
     {
-        taskList   :Array<string>,
-        inputError :boolean,
-        inputText  :string,
+        taskList    :Array<string>,
+        globalTheme :any,
+        inputError  :boolean,
+        inputText   :string,
     }
