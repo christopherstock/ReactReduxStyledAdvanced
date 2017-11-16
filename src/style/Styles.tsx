@@ -5,8 +5,6 @@
     /*******************************************************************************************************************
     *   Defines all stylings for all styled components.
     *
-    *   TODO refactor names! group same elements!
-    *
     *   More information on 'tagged template literals', a new feature in ES6, can be found here:
     *   @see https://www.styled-components.com/docs/advanced#tagged-template-literals
     *
