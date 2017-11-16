@@ -83,8 +83,6 @@
             return {
                 taskList:    newTasks,
                 globalTheme: state.globalTheme,
-                inputError:  state.inputError,
-                inputText:   state.inputText,
             };
         }
 
@@ -104,8 +102,6 @@
             return {
                 taskList:    newTasks,
                 globalTheme: state.globalTheme,
-                inputError:  state.inputError,
-                inputText:   state.inputText,
             };
         }
 
@@ -129,8 +125,6 @@
             return {
                 taskList:    newTasks,
                 globalTheme: state.globalTheme,
-                inputError:  state.inputError,
-                inputText:   state.inputText,
             };
         }
 
@@ -154,8 +148,6 @@
             return {
                 taskList:    newTasks,
                 globalTheme: state.globalTheme,
-                inputError:  state.inputError,
-                inputText:   state.inputText,
             };
         }
 
@@ -172,8 +164,6 @@
             return {
                 taskList:    state.taskList,
                 globalTheme: action.newTheme,
-                inputError:  state.inputError,
-                inputText:   state.inputText,
             };
         }
 
@@ -187,8 +177,6 @@
             return {
                 taskList:    [],
                 globalTheme: tl.Styles.ThemeDefault,
-                inputError:  false,
-                inputText:   "",
             };
         }
     }

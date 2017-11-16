@@ -41,12 +41,7 @@
         ***************************************************************************************************************/
         public static connectTaskInput( component:ReactRedux.ComponentClass<tl.TaskInputProps> ) : ReactRedux.ComponentClass<tl.TaskInputProps>
         {
-            const mapStateToProps:ReactRedux.MapStateToProps<tl.State, tl.TaskInputProps> = ( state:tl.State ) : any => {
-                return {
-                    inputError: state.inputError,
-                    inputText:  state.inputText,
-                }
-            };
+            const mapStateToProps:ReactRedux.MapStateToProps<tl.State, tl.TaskInputProps> = null;
 
             const mapDispatchToProps:ReactRedux.MapDispatchToPropsParam<any, tl.TaskInputProps> = {
                 onTaskCreate: tl.ActionCreator.createTaskAction,

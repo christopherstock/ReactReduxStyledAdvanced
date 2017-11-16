@@ -9,6 +9,4 @@
     {
         taskList    :Array<string>,
         globalTheme :any,
-        inputError  :boolean,
-        inputText   :string,
     }
