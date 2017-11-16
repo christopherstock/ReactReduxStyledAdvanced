@@ -112,7 +112,7 @@
                 margin:     0 auto 0 auto;
                 padding:    15px;
                 width:      640px;
-                height:     315px;
+                height:     auto;
                 transition: all 0.3s ease-in;
             `;
         }

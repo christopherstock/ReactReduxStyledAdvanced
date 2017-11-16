@@ -49,6 +49,16 @@
                     break;
                 }
 
+                case tl.ActionCreator.ACTION_SWITCH_THEME:
+                {
+                    newState = Reducer.switchThemeReducer( state, action );
+                    break;
+                }
+
+
+
+
+
                 case tl.ActionCreator.ACTION_SET_INPUT_FIELD:
                 {
                     newState = Reducer.setInputFieldReducer( state, action );
@@ -176,6 +186,31 @@
                 inputText:   state.inputText,
             };
         }
+
+        /***************************************************************************************************************
+        *   Reduces the state in order to switch the global theme.
+        *
+        *   @param state  The existing state object.
+        *   @param action The action to perform on the state object.
+        *
+        *   @return The new and reduced state object.
+        ***************************************************************************************************************/
+        private static switchThemeReducer( state:tl.State, action:tl.Action ) : tl.State
+        {
+            return {
+                taskList:    state.taskList,
+                globalTheme: action.newTheme,
+                inputError:  state.inputError,
+                inputText:   state.inputText,
+            };
+        }
+
+
+
+
+
+
+
 
         /***************************************************************************************************************
         *   Reduces the state in order to set a text for the input field.

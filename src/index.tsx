@@ -28,12 +28,15 @@
         store.dispatch( tl.ActionCreator.createTaskAction( "Abwaschen"        ) );
         store.dispatch( tl.ActionCreator.createTaskAction( "Wäsche waschen"   ) );
 
-        // render the App component into the main container
+        // dispatch new app theme
+        store.dispatch( tl.ActionCreator.createThemeSwitchAction( tl.Styles.ThemeMayflower ) );
 
-        let mainContainer:HTMLDivElement = document.createElement('div');
+        // create and add a new main container
+        let mainContainer:HTMLDivElement = document.createElement( 'div' );
         mainContainer.id = "mainContainer";
         document.body.appendChild(mainContainer);
 
+        // render the App component into the main container
         ReactDOM.render(
 
             <ReactRedux.Provider store={ store }>

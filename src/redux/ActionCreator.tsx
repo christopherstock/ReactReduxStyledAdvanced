@@ -13,6 +13,7 @@
         public  static  readonly    ACTION_DELETE_TASK          :string         = 'ACTION_DELETE_TASK';
         public  static  readonly    ACTION_MOVE_TASK_UP         :string         = 'ACTION_MOVE_TASK_UP';
         public  static  readonly    ACTION_MOVE_TASK_DOWN       :string         = 'ACTION_MOVE_TASK_DOWN';
+        public  static  readonly    ACTION_SWITCH_THEME         :string         = 'ACTION_SWITCH_THEME';
         public  static  readonly    ACTION_SET_INPUT_FIELD      :string         = 'ACTION_SET_INPUT_FIELD';
         public  static  readonly    ACTION_CLEAR_INPUT_FIELD    :string         = 'ACTION_CLEAR_INPUT_FIELD';
         public  static  readonly    ACTION_SET_INPUT_ERROR      :string         = 'ACTION_SET_INPUT_ERROR';
@@ -77,6 +78,25 @@
                 taskIndex: taskIndex,
             }
         }
+
+        /***************************************************************************************************************
+        *   Specifies the redux action 'switch theme'.
+        *
+        *   @param newTheme The new theme to apply.
+        *
+        *   @return The action object for switching the theme.
+        ***************************************************************************************************************/
+        public static createThemeSwitchAction( newTheme:any ) : tl.Action
+        {
+            return {
+                type:     ActionCreator.ACTION_SWITCH_THEME,
+                newTheme: newTheme,
+            }
+        }
+
+
+
+
 
         /***************************************************************************************************************
         *   Specifies the redux action 'set input field'.

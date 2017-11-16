@@ -10,6 +10,8 @@
     export interface Action extends Redux.Action
     {
         type       :string;
+
+        newTheme?  :any;
         taskName?  :string;
         taskIndex? :number;
         inputText? :string;

@@ -10,6 +10,7 @@
     *   TODO Add theme switcher.
     *   TODO Remove redux handling of inputError and inputText in TaskInput component according to ReactRedux!
     *   TODO Remove packages '@types/typescript' and '@types/redux' from package.json?
+    *   TODO New class 'state' for Redux State according to ReactRedux project.
     *
     *   @author  Christopher Stock
     *   @version 1.0
